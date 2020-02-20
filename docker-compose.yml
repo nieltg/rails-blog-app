@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:11-alpine
+    environment:
+      - POSTGRES_DB=blog
+      - POSTGRES_USER=blog
+      - POSTGRES_PASSWORD=blog
+    volumes:
+      - db_data:/var/lib/postgresql/data
+  web:
+    build: .
+    environment:
+      - RAILS_ENV=production
+      - NODE_ENV=production
+      - SECRET_KEY_BASE=00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      - RAILS_LOG_TO_STDOUT=true
+      - RAILS_SERVE_STATIC_FILES=true
+      - DATABASE_URL=postgres://blog:blog@db/blog
+    ports:
+      - 3000:3000
+
+volumes:
+  db_data:
