@@ -6,8 +6,6 @@
 
 # Ignore IDE config.
 .idea
-/*/.idea
-/*/**/.idea
 
 # Ignore bundler config.
 /.bundle
