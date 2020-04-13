@@ -15,8 +15,8 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installing
 1) Run `gem install`. You will see error because of missing dependencies.
 2) Run `bundle install`.
-3) Create role `blog` with `superuser` access.
-4) Create database `blog_development`.
+3) Create Postgres role `blog` with `superuser` access.
+4) Create database `blog_development` under Postgres role `blog`.
 5) Migrate using this command: `rails db:migrate RAILS_ENV=development` if your environment is development.
   
 ## Running the tests
